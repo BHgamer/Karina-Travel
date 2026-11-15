@@ -230,7 +230,211 @@ a {
     color: #b9c6d5;
     font-size: 13px;
 }
+/* =====================================
+   DESTINOS INTERNACIONAIS
+===================================== */
+#internacionais {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    margin: 0 auto 30px;
+    padding-top: 20px;
+}
+.internacionais {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
 
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding: 0 15px;
+
+    box-sizing: border-box;
+    
+}
+
+
+/* =====================================
+   CARDS
+===================================== */
+
+.internacionais .destination-card {
+    position: relative;
+
+    width: 100%;
+    height: 390px;
+    min-height: 390px;
+
+    overflow: hidden;
+    border-radius: 20px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* =====================================
+   IMAGENS
+===================================== */
+
+/* MONTREAL */
+
+.internacionais .card-beach {
+    background-image: url("assecss/montreal.png");
+    background-position: center;
+}
+
+/* NOVA YORK */
+
+.internacionais .card-city {
+    background-image: url("assecss/Nova\ Yorque.png");
+    background-position: center;
+}
+
+/* LISBOA */
+
+.internacionais .card-nature {
+    background-image: url("assecss/lisboa.png");
+    background-position: center;
+}
+
+/* =====================================
+   SOMBRA SOBRE AS IMAGENS
+===================================== */
+
+.internacionais .destination-card::before {
+   height: 370px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    border-radius: 18px;
+    
+}
+
+/* =====================================
+   CONTEÚDO DOS CARDS
+===================================== */
+
+.internacionais .card-content {
+    position: absolute;
+
+    left: 25px;
+    right: 25px;
+    bottom: 28px;
+
+    color: #ffffff;
+
+    z-index: 2;
+}
+
+.internacionais .card-content span {
+    display: block;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.internacionais .card-content h3 {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 25px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    margin: 0 0 10px;
+}
+
+.internacionais .card-content p {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+    font-weight: 400;
+
+    line-height: 1.5;
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* =====================================
+   EFEITO HOVER
+===================================== */
+
+.internacionais .destination-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================
+   TABLETS
+===================================== */
+
+@media (max-width: 900px) {
+
+    .internacionais {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .internacionais .destination-card {
+        height: 350px;
+        min-height: 350px;
+    }
+
+}
+
+/* =====================================
+   CELULARES
+===================================== */
+
+@media (max-width: 600px) {
+
+    .internacionais {
+        grid-template-columns: 1fr;
+        gap: 22px;
+
+        padding: 0 10px;
+    }
+
+    .internacionais .destination-card {
+        height: 340px;
+        min-height: 340px;
+
+        border-radius: 16px;
+    }
+
+    .internacionais .card-content {
+        left: 22px;
+        right: 22px;
+        bottom: 24px;
+    }
+
+    .internacionais .card-content h3 {
+        font-size: 23px;
+    }
+
+    .internacionais .card-content p {
+        font-size: 14px;
+    }
+
+}
 /* CARDS DE DESTINOS */
 
 .cards {
@@ -314,6 +518,7 @@ a {
 .card-content p {
     font-size: 12px;
 }
+
 
 
 /* ==============================
@@ -418,7 +623,99 @@ a {
     color: var(--red);
     letter-spacing: .2em;
 }
+/* =====================================
+   AVALIAÇÕES DE CLIENTES
+===================================== */
 
+.testimonials {
+    width: 100%;
+    padding: 80px 20px;
+    background: #f8f9fb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* TÍTULO DA SEÇÃO */
+
+.testimonials .section-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+
+.testimonials .section-heading h2 {
+    color: #071d38;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+/* GRID DAS AVALIAÇÕES */
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* CARD */
+
+.testimonial-card {
+    width: 100%;
+    overflow: hidden;
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* IMAGENS */
+
+.testimonial-card img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+/* EFEITO HOVER */
+
+.testimonial-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 768px) {
+
+    .testimonials {
+        padding: 55px 15px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .testimonials .section-heading h2 {
+        font-size: 24px;
+    }
+
+}
 
 /* ==============================
    CONTATO
