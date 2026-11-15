@@ -184,9 +184,46 @@
 
                     <span>03 / AVENTURA</span>
 
-                    <h3>Natureza e aventura</h3>
+                    <h3>Natureza e aventura</h>
 
                     <p>Experiências para sair da rotina.</p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<h2 id="internacionais">Viaje pelo mundo</h2>
+
+<div class="internacionais">
+
+
+            <article class="destination-card card-beach">
+
+                <div class="card-content">
+
+                </div>
+
+            </article>
+
+
+            <article class="destination-card card-city">
+
+                <div class="card-content">   
+                </div>
+
+            </article>
+
+
+            <article class="destination-card card-nature">
+
+                <div class="card-content">
 
                 </div>
 
@@ -310,7 +347,37 @@
     </div>
 
 </section>
+<section class="section testimonials" id="avaliacoes">
 
+    <div class="container">
+
+        <div class="section-heading">
+            <h2>Quem viaja com a Karina recomenda!</h2>
+        </div>
+
+        <div class="testimonials-grid">
+
+            <article class="testimonial-card">
+                <img
+                    src="assecss/avaliação01.png"
+                    alt="Avaliação de cliente da Karina Travel"
+                    loading="lazy"
+                >
+            </article>
+
+            <article class="testimonial-card">
+                <img
+                    src="assecss/avaliação02.png"
+                    alt="Depoimento de família que realizou viagem para o Canadá"
+                    loading="lazy"
+                >
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
@@ -355,65 +422,65 @@
 
 
 
-        <form class="contact-form" id="travelForm">
+       <form class="contact-form" id="travelForm">
 
-            <h3>Conte seus planos</h3>
+    <h3>Conte seus planos</h3>
 
-            <p>Preencha os dados para solicitar seu orçamento.</p>
+    <p>Preencha os dados para solicitar seu orçamento.</p>
 
+    <label for="nome">Seu nome</label>
+    <input
+        type="text"
+        id="nome"
+        name="nome"
+        placeholder="Digite seu nome"
+        required
+    >
 
-            <label for="nome">Seu nome</label>
+    <label for="telefone">WhatsApp</label>
+    <input
+        type="tel"
+        id="telefone"
+        name="telefone"
+        placeholder="(00) 00000-0000"
+        required
+    >
 
-            <input
-                type="text"
-                id="nome"
-                name="nome"
-                placeholder="Digite seu nome"
-                required
-            >
+    <label for="origem">Cidade de origem</label>
+    <input
+        type="text"
+        id="origem"
+        name="origem"
+        placeholder="Ex.: Brasília - DF"
+        required
+    >
 
+    <label for="destino">Cidade de destino</label>
+    <input
+        type="text"
+        id="destino"
+        name="destino"
+        placeholder="Ex.: Montreal - Canadá"
+        required
+    >
 
-            <label for="telefone">WhatsApp</label>
+    <label for="mensagem">Mais informações</label>
+    <textarea
+        id="mensagem"
+        name="mensagem"
+        rows="4"
+        placeholder="Data da viagem, quantidade de pessoas..."
+    ></textarea>
 
-            <input
-                type="tel"
-                id="telefone"
-                name="telefone"
-                placeholder="(00) 00000-0000"
-                required
-            >
+    <button type="submit" class="btn btn-red form-button">
+        Solicitar orçamento ↗
+    </button>
 
+    <small class="form-note">
+        Seu atendimento continuará pelo WhatsApp.
+    </small>
 
-            <label for="destino">Destino desejado</label>
-
-            <input
-                type="text"
-                id="destino"
-                name="destino"
-                placeholder="Para onde deseja viajar?"
-                required
-            >
-
-
-            <label for="mensagem">Mais informações</label>
-
-            <textarea
-                id="mensagem"
-                name="mensagem"
-                rows="4"
-                placeholder="Data da viagem, quantidade de pessoas..."
-            ></textarea>
-
-
-            <button type="submit" class="btn btn-red form-button">
-                Solicitar orçamento ↗
-            </button>
-
-            <small class="form-note">
-                Seu atendimento continuará pelo WhatsApp.
-            </small>
-
-        </form>
+</form>
 
     </div>
 
@@ -512,13 +579,10 @@ travelForm.addEventListener("submit", (event) => {
     const form = new FormData(travelForm);
 
     const nome = form.get("nome").trim();
-
     const telefone = form.get("telefone").trim();
-
+    const origem = form.get("origem").trim();
     const destino = form.get("destino").trim();
-
     const mensagem = form.get("mensagem").trim();
-
 
     const texto = `Olá, Karina Travel!
 
@@ -526,35 +590,19 @@ Meu nome é ${nome}.
 
 Meu WhatsApp: ${telefone}
 
-Destino desejado: ${destino}
+Cidade de origem: ${origem}
+
+Cidade de destino: ${destino}
 
 Mais informações: ${mensagem}
 
-Olá, vim pelo site Gostaria de receber um orçamento para minha viagem.`;
-
+Gostaria de receber um orçamento para minha viagem.`;
 
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
 
     window.open(url, "_blank");
 
 });
-
-
-
-const whatsFloat = document.getElementById("whatsFloat");
-
-whatsFloat.addEventListener("click", (event) => {
-
-    event.preventDefault();
-
-    const mensagem = "Olá, Karina Travel! Gostaria de informações sobre viagens e pacotes.";
-
-    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
-
-    window.open(url, "_blank");
-
-});
-
 
 document.getElementById("year").textContent =
     new Date().getFullYear();
