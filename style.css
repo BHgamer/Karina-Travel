@@ -63,7 +63,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 5px 25px #06172b0b;
+    box-shadow: 0 5px 30px #06172b0b;
 }
 
 .nav-wrap {
@@ -288,7 +288,7 @@ a {
 /* MONTREAL */
 
 .internacionais .card-beach {
-    background-image: url("assecss/Montreal.png");
+    background-image: url("assecss/montreal.png");
     background-position: center;
 }
 
@@ -302,7 +302,7 @@ a {
 /* LISBOA */
 
 .internacionais .card-nature {
-    background-image: url("assecss/Lisboa.png");
+    background-image: url("assecss/lisboa.png");
     background-position: center;
 }
 
@@ -1037,4 +1037,47 @@ a {
         gap: 15px;
     }
 
+}
+/* REDES SOCIAIS DO FOOTER */
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin: 20px 0;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    transition: transform 0.3s ease;
+}
+
+.footer-social img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.footer-social a:hover {
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .footer-social {
+        gap: 25px;
+    }
+
+    .footer-social img {
+        width: 32px;
+        height: 32px;
+    }
 }
